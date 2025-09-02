@@ -1344,6 +1344,9 @@ Privé
 • CIFRE CEA-Marcoule, 2006-2009, "incorporation de sulfate dans des matrices vitreuses". Contrat accompagnement 30keuros. Thèse M. Lenoir.
 • CIFRE CEA-Marcoule, 2006-2009, "mécanismes et cinétiques des équilibre rédox dans des borosilicates". Contrat accompagnement 30keuros. Thèse de B. Cochain.
 • CIFRE CEA-Marcoule, 2002-2005, "mécanismes et cinétiques des équilibre rédox dans des silicates". Contrat accompagnement 30keuros. Thèse de V. Magnien.
+
+
+
 <!--
 **DanielNEUVILLE/DanielNEUVILLE** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
