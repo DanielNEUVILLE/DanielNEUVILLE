@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Votre Nom – CV</title>
+  <meta name="description" content="CV professionnel de Votre Nom – expériences, compétences, projets et formations." />
+  <style>
+    :root {
+      --bg: #0f172a;          /* slate-900 */
+      --panel: #111827;       /* gray-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e5e7eb;        /* gray-200 */
+      --brand: #22d3ee;       /* cyan-400 */
+      --accent: #38bdf8;      /* sky-400 */
+      --chip: #1f2937;        /* gray-800 */
+      --border: #1f2937;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;          /* slate-50 */
+        --panel: #ffffff;       /* white */
+        --muted: #475569;       /* slate-600 */
+        --text: #0f172a;        /* slate-900 */
+        --brand: #0ea5e9;       /* sky-500 */
+        --accent: #0891b2;      /* cyan-600 */
+        --chip: #f1f5f9;        /* slate-100 */
+        --border: #e5e7eb;      /* gray-200 */
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: radial-gradient(1200px 800px at 10% 0%, rgba(34,211,238,.08), transparent 50%),
+                               radial-gradient(1000px 700px at 90% 10%, rgba(56,189,248,.08), transparent 50%),
+                               var(--bg);
+      color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 28px; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, rgba(34,211,238,.2), rgba(56,189,248,.12));
+      border: 1px solid var(--border); border-radius: 24px; padding: 28px; backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+    }
+    .top {
+      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+    }
+    .name { font-size: 36px; line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
+    .title { color: var(--muted); margin: 6px 0 0 0; font-size: 18px; }
+
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--panel);
+      color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer;
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--accent)); color: #0b1220; border: none; }
+
+    .contact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; }
+    .chip svg { width: 16px; height: 16px; opacity: .8; }
+
+    /* Layout */
+    .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; margin-top: 24px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+    section { background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 22px; box-shadow: var(--shadow); }
+    section + section { margin-top: 20px; }
+    h2 { margin: 0 0 14px 0; font-size: 20px; letter-spacing: .2px; }
+    h3 { margin: 0 0 4px 0; font-size: 17px; }
+    .muted { color: var(--muted); }
+
+    /* Timeline */
+    .timeline { display: grid; gap: 16px; }
+    .item { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    .item .meta { text-align: right; color: var(--muted); font-size: 14px; }
+    .item .pill { background: var(--chip); border: 1px solid var(--border); padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+    .skill { background: var(--chip); border: 1px solid var(--border); padding: 12px; border-radius: 14px; }
+    .bar { height: 8px; background: rgba(148,163,184,.3); border-radius: 999px; overflow: hidden; margin-top: 8px; }
+    .bar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--brand), var(--accent)); width: var(--w, 60%); }
+
+    /* Lists */
+    ul.clean { list-style: none; padding-left: 0; margin: 0; }
+    ul.clean li { margin: 8px 0; }
+
+    /* Footer */
+    footer { color: var(--muted); font-size: 14px; text-align: center; margin: 28px 0 8px; }
+
+    /* Print */
+    @media print {
+      body { background: #fff; }
+      header, section { box-shadow: none; }
+      .actions { display: none; }
+      .container { padding: 0; }
+      .grid { grid-template-columns: 1fr .65fr; gap: 16px; }
+      footer { display: none; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="top">
+        <div>
+          <h1 class="name">Votre Nom</h1>
+          <p class="title">Intitulé du poste / Spécialité</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#" onclick="window.print()" aria-label="Imprimer le CV">🖨️ Imprimer</a>
+          <a class="btn primary" href="mailto:votre.email@exemple.com" aria-label="Me contacter">Me contacter</a>
+        </div>
+      </div>
+      <div class="contact" aria-label="Coordonnées">
+        <span class="chip" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          votre.email@exemple.com
+        </span>
+        <span class="chip" title="Téléphone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.14a2 2 0 0 1 2.11-.45c.84.27 1.71.45 2.61.57A2 2 0 0 1 22 16.92z"/></svg>
+          +33 6 12 34 56 78
+        </span>
+        <span class="chip" title="Lieu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+          Ville, Pays (mobilité)
+        </span>
+        <span class="chip" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.5h5V24H0zM8 8.5h4.8v2.1h.1c.7-1.3 2.4-2.6 4.9-2.6 5.2 0 6.2 3.3 6.2 7.6V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H8z"/></svg>
+          linkedin.com/in/votreprofil
+        </span>
+        <span class="chip" title="Portfolio ou GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+          portfolio.dev/vous
+        </span>
+      </div>
+    </header>
+
+    <div class="grid" role="main">
+      <!-- Colonne principale -->
+      <div>
+        <section aria-labelledby="profil">
+          <h2 id="profil">Profil</h2>
+          <p class="muted">Résumé en 3–5 lignes. <strong>Ex. :</strong> Professionnel(elle) avec X ans d'expérience en _____, spécialisé(e) en _____, orienté(e) résultats, habitué(e) aux environnements Agile, etc.</p>
+        </section>
+
+        <section aria-labelledby="experience">
+          <h2 id="experience">Expériences</h2>
+          <div class="timeline">
+            <div class="item">
+              <div>
+                <h3>Intitulé du poste – Entreprise</h3>
+                <div class="muted">Ville, Pays · CDI</div>
+                <ul class="clean">
+                  <li>Réalisations clés (quantifiées si possible : +X% / -Y jours / Z € économisés).</li>
+                  <li>Responsabilité / technologie / produit majeur.</li>
+                  <li>Collaboration inter-équipes, leadership, gestion de projet, etc.</li>
+                </ul>
+              </div>
+              <div class="meta">
+                <span class="pill">2023 – Aujourd’hui</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div>
+                <h3>Intitulé du poste – Entreprise</h3>
+                <div class="muted">Ville, Pays · Stage / Alternance</div>
+                <ul class="clean">
+                  <li>Impact mesurable et résultats obtenus.</li>
+                  <li>Outils, langages, méthodes (Scrum, ITIL, ISO…).</li>
+                </ul>
+              </div>
+              <div class="meta">
+                <span class="pill">2021 – 2023</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="projets">
+          <h2 id="projets">Projets marquants</h2>
+          <ul class="clean">
+            <li><strong>Nom du projet</strong> — brève description, technologies, résultat (lien si public).</li>
+            <li><strong>Nom du projet</strong> — brève description, technologies, résultat (lien si public).</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Colonne latérale -->
+      <aside>
+        <section aria-labelledby="competences">
+          <h2 id="competences">Compétences</h2>
+          <div class="skills">
+            <div class="skill">
+              <div>Compétence A</div>
+              <div class="bar"><i style="--w:85%"></i></div>
+            </div>
+            <div class="skill">
+              <div>Compétence B</div>
+              <div class="bar"><i style="--w:70%"></i></div>
+            </div>
+            <div class="skill">
+              <div>Compétence C</div>
+              <div class="bar"><i style="--w:60%"></i></div>
+            </div>
+            <div class="skill">
+              <div>Compétence D</div>
+              <div class="bar"><i style="--w:90%"></i></div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="formation">
+          <h2 id="formation">Formation</h2>
+          <ul class="clean">
+            <li>
+              <strong>Diplôme</strong> — Établissement, Ville (Années)
+              <div class="muted">Mention / Spécialité / Cours clés</div>
+            </li>
+            <li>
+              <strong>Certification</strong> — Organisme (Année)
+              <div class="muted">ID / Score / Lien</div>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="langues">
+          <h2 id="langues">Langues</h2>
+          <ul class="clean">
+            <li>Français — Natal</li>
+            <li>Anglais — Courant (C1)</li>
+            <li>Espagnol — Intermédiaire (B2)</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="interets">
+          <h2 id="interets">Centres d’intérêt</h2>
+          <ul class="clean">
+            <li>Ex. : DataViz, Open Source, Photo, Randonnée…</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      Dernière mise à jour : <span id="lastUpdate"></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+  </script>
+</body>
+</html>
