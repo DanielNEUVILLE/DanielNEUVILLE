@@ -1,6 +1,3 @@
-
-[Neuville2025.pdf](https://github.com/user-attachments/files/22099630/Neuville2025.pdf)
-
 <!--
 **DanielNEUVILLE/DanielNEUVILLE** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
