@@ -1,6 +1,5 @@
 Compléments contributions Scientifiques 
 
-
 1.	CV
 2.	Responsabilités (associatives, colloques, congrès)
 3.	Honneurs et reconnaissances
